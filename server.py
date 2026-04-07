@@ -1,11 +1,10 @@
 from flask import Flask ,render_template , request, redirect 
 import csv
 import sys 
-path = 'D:\portfolio\server.py'
+path = 'home/mitchbrown/server'
 
 if path not in sys.path:
     sys.path.insert(0, path)
-from server import app 
 
 
 app = Flask(__name__)
