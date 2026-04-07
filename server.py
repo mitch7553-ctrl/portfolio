@@ -1,5 +1,12 @@
 from flask import Flask ,render_template , request, redirect 
 import csv
+import sys 
+path = 'D:\portfolio\server.py'
+
+if path not in sys.path:
+    sys.path.insert(0, path)
+from server import app 
+
 
 app = Flask(__name__)
 
@@ -40,3 +47,8 @@ def submit_form():
         return redirect('/thankyou.html')
     else:
         return 'something went wrong'
+    
+    
+    
+if __name__ == '__main__':
+    app.run(debug=True)
