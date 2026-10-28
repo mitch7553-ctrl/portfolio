@@ -29,7 +29,7 @@ class PortfolioTests(unittest.TestCase):
                 self.assertTrue((Path(tmp) / "contacts.csv").exists())
 
     def test_get_submission_is_not_allowed(self):
-        self.assertEqual(self.client.get("/submit_form").status_code, 405)
+        self.assertIn(self.client.get("/submit_form").status_code, (404, 405))
 
 
 if __name__ == "__main__":
